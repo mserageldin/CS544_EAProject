@@ -11,8 +11,10 @@ public class Generator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name="student_id", columnDefinition = "char(11)")
     private String studentId;
 
+    @Column(columnDefinition = "char(14)")
     private String barCode;
 
     public Generator(String studentId, String barCode) {
