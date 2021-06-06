@@ -11,4 +11,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CourseRepo extends JpaRepository<Course,Integer> {
     boolean existsByCode(String code);
     Course findByCode(String code);
+
 }

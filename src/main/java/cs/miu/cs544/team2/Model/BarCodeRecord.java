@@ -29,5 +29,23 @@ public class BarCodeRecord {
     @JoinColumn(name = "studentId")
     private Student student;
 
+    private String period;
+    private String courseCode;
+    private String facultyName;
+
+    public BarCodeRecord(String barcode, Timeslot timeslot, LocalDateTime timeStamp, Location location, Student student, String period, String courseCode, String facultyName) {
+        this.barcode = barcode;
+        this.timeslot = timeslot;
+        this.timeStamp = timeStamp;
+        this.location = location;
+        this.student = student;
+        this.period = period;
+        this.courseCode = courseCode;
+        this.facultyName = facultyName;
+    }
+
+    public BarCodeRecord() {
+
+    }
 }
 

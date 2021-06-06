@@ -16,11 +16,11 @@ public class Registration {
     @Column(columnDefinition = "datetime")
     private LocalDate date;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="offerid")
     private CourseOffering offering;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="studentid")
     private Student student;
 

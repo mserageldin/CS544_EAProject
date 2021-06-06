@@ -6,6 +6,7 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -32,7 +33,7 @@ public class CourseOffering {
     @OneToMany
     @JoinColumn(name = "offerid")
     @Fetch(FetchMode.SUBSELECT)
-    private List<Registration> registrations;
+    private List<Registration> registrations = new ArrayList<>();
 
     @Column
     private int capacity;
@@ -43,10 +44,12 @@ public class CourseOffering {
 
     @OneToMany
     @JoinColumn(name = "sessionId")
-    private List<ClassSession> session;
+    private List<ClassSession> session = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "locationId")
     private Location location;
+
+
 
 }

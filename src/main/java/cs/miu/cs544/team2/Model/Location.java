@@ -27,10 +27,10 @@ public class Location {
     @Column(nullable = false)
     private Integer capacity;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     private List<BarCodeRecord> barcodes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     private List<CourseOffering> offerings = new ArrayList<>();
 
     public Location(String name, String building, String roomNumber, Integer capacity) {
