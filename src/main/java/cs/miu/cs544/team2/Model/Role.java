@@ -1,6 +1,8 @@
 package cs.miu.cs544.team2.Model;
 
 import com.sun.istack.NotNull;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +13,7 @@ import java.util.Objects;
 @Entity
 @Getter @Setter
 @NoArgsConstructor
+@Data
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
