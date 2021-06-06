@@ -30,7 +30,7 @@ public class Student extends Person {
     @Column(name="entry", columnDefinition = "datetime")
     private LocalDate entryDate;
 
-    @Column(columnDefinition = "char(13)")
+    @Column(columnDefinition = "char(14)")
     private String barcode;
 
     @OneToMany

@@ -1,9 +1,11 @@
 package cs.miu.cs544.team2;
 
 
+import cs.miu.cs544.team2.Model.Generator;
 import cs.miu.cs544.team2.Model.Role;
 import cs.miu.cs544.team2.Model.RoleType;
 import cs.miu.cs544.team2.Model.Timeslot;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.GeneratorService;
 import cs.miu.cs544.team2.Service.ModelServiceInterfaces.RoleService;
 import cs.miu.cs544.team2.Service.ModelServiceInterfaces.TimeslotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class StartUpRunner implements CommandLineRunner {
     private RoleService roleRepo;
     @Autowired
     private TimeslotService timeslot;
+    @Autowired
+    private GeneratorService generatorService;
 
 
     @Transactional
@@ -28,9 +32,12 @@ public class StartUpRunner implements CommandLineRunner {
         Role faculty = new Role(RoleType.FACULTY);
         Role personnel = new Role(RoleType.PERSONNEL);
         Role administrator = new Role(RoleType.ADMINISTRATOR);
+
         Timeslot timeslot1 = new Timeslot("AM","Morning", LocalTime.of(10,00),LocalTime.of(12,30));
         Timeslot timeslot2 = new Timeslot("PM","Afternoon",LocalTime.of(14,00),LocalTime.of(16,00));
         Timeslot timeslot3 = new Timeslot("PM", "Evening",LocalTime.of(19,00), LocalTime.of(20,30));
+
+        Generator generator = new Generator("MIU20210601","ATTMIU20210601");
 
         roleRepo.saveRole(student);
         roleRepo.saveRole(faculty);
@@ -40,6 +47,8 @@ public class StartUpRunner implements CommandLineRunner {
         timeslot.saveTimeSlot(timeslot1);
         timeslot.saveTimeSlot(timeslot2);
         timeslot.saveTimeSlot(timeslot3);
+
+        generatorService.save(generator);
 
     }
 }
