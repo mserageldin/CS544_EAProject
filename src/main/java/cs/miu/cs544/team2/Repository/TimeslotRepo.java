@@ -10,4 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = false)
 public interface TimeslotRepo extends JpaRepository<Timeslot,Integer> {
     boolean existsTimeslotByTitle(String title);
+
 }

@@ -1,14 +1,16 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.UCServiceInterfacesImpl;
 
 import cs.miu.cs544.team2.Model.*;
-import cs.miu.cs544.team2.Service.interfaces2.StudentUCService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl.*;
+import cs.miu.cs544.team2.Service.UCServiceInterfaces.UCStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class StudentUCServiceImpl implements StudentUCService {
+public class UCStudentServiceImpl implements UCStudentService {
     @Autowired
     private StudentServiceImpl studentService;
     @Autowired
@@ -19,6 +21,8 @@ public class StudentUCServiceImpl implements StudentUCService {
     private BarCodeRecordServiceImpl barCodeRecordService;
     @Autowired
     private CourseServiceImpl courseService;
+    @Autowired
+    private TimeslotServiceImpl timeslotService;
 
 
     @Override
@@ -55,4 +59,20 @@ public class StudentUCServiceImpl implements StudentUCService {
         return null;
     }
 
+    @Override
+    public void takeAttendance(String barCode, Location location, LocalDateTime timeStamp) {
+        Student student = studentService.getStudentByBarCode(barCode);
+        Timeslot timeslot = timeslotService.getTimeSlot(timeStamp);
+        String period = timeStamp.getMonth().toString();
+        String courseCode = "";
+        String facultyName = "";
+        List<CourseOffering> courseOfferings = location.getOfferings();
+        for(CourseOffering a: courseOfferings){
+            if(a.getPeriod().equalsIgnoreCase(period)){
+                courseCode = a.getCourse().getCode();
+                facultyName = a.getFaculty().getFirstName();
+            }
+        }
+        barCodeRecordService.saveBarCodeRecord(student,location,timeslot,courseCode,facultyName);
+    }
 }

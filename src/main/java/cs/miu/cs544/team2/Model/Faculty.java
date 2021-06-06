@@ -14,6 +14,7 @@ public class Faculty extends Person {
     private String title;
 
     @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OrderColumn(name = "sequence")
     private List<CourseOffering> offering = new ArrayList<>();
 
 }

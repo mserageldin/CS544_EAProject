@@ -11,4 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface StudentRepo extends JpaRepository<Student,Integer> {
     Student findByStudentId(String studentId);
     boolean existsByStudentId(String studentId);
+    boolean existsByBarcode(String barCode);
+    Student findByBarcode(String barCode);
 }

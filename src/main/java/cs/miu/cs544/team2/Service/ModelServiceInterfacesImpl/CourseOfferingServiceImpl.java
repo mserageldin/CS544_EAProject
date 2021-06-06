@@ -1,10 +1,10 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl;
 
 
 import cs.miu.cs544.team2.Model.Course;
 import cs.miu.cs544.team2.Model.CourseOffering;
 import cs.miu.cs544.team2.Repository.CourseOfferingRepo;
-import cs.miu.cs544.team2.Service.interfaces.CourseOfferingService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.CourseOfferingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

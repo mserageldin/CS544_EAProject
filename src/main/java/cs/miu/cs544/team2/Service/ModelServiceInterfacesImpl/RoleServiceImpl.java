@@ -1,9 +1,9 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl;
 
 
 import cs.miu.cs544.team2.Model.Role;
 import cs.miu.cs544.team2.Repository.RoleRepo;
-import cs.miu.cs544.team2.Service.interfaces.RoleService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
