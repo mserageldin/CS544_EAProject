@@ -1,9 +1,9 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl;
 
 
 import cs.miu.cs544.team2.Model.Student;
 import cs.miu.cs544.team2.Repository.StudentRepo;
-import cs.miu.cs544.team2.Service.interfaces.StudentService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,5 +43,15 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public boolean updateStudent(Student student) {
         return false;
+    }
+
+    @Override
+    public Student getStudentByBarCode(String barCode) {
+        if(null != barCode){
+            if(studentRepo.existsByBarcode(barCode)){
+                return studentRepo.findByBarcode(barCode);
+            }
+        }
+        return null;
     }
 }

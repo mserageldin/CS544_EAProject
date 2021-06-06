@@ -1,11 +1,11 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl;
 
 
 import cs.miu.cs544.team2.Model.CourseOffering;
 import cs.miu.cs544.team2.Model.Registration;
 import cs.miu.cs544.team2.Model.Student;
 import cs.miu.cs544.team2.Repository.RegistrationRepo;
-import cs.miu.cs544.team2.Service.interfaces.RegistrationService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

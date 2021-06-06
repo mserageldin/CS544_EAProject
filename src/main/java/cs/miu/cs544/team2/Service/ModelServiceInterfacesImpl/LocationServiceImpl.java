@@ -1,9 +1,9 @@
-package cs.miu.cs544.team2.Service;
+package cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl;
 
 
 import cs.miu.cs544.team2.Model.Location;
 import cs.miu.cs544.team2.Repository.LocationRepo;
-import cs.miu.cs544.team2.Service.interfaces.LocationService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

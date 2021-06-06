@@ -1,4 +1,4 @@
-package cs.miu.cs544.team2.Service.interfaces;
+package cs.miu.cs544.team2.Service.ModelServiceInterfaces;
 
 
 import cs.miu.cs544.team2.Model.CourseOffering;
