@@ -23,7 +23,8 @@ public class UCStudentServiceImpl implements UCStudentService {
     private CourseServiceImpl courseService;
     @Autowired
     private TimeslotServiceImpl timeslotService;
-
+    @Autowired
+    private LocationServiceImpl locationService;
 
     @Override
     public void register(String studentId, String courseCode, String period) {
@@ -60,8 +61,9 @@ public class UCStudentServiceImpl implements UCStudentService {
     }
 
     @Override
-    public void takeAttendance(String barCode, Location location, LocalDateTime timeStamp) {
+    public void takeAttendance(String barCode, String building, String roomNumber, LocalDateTime timeStamp) {
         Student student = studentService.getStudentByBarCode(barCode);
+        Location location = locationService.getLocation(building,roomNumber);
         Timeslot timeslot = timeslotService.getTimeSlot(timeStamp);
         String period = timeStamp.getMonth().toString();
         String courseCode = "";
