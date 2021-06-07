@@ -27,6 +27,10 @@ public class Role {
         this.type = type;
     }
 
+    public String getRoleType(){
+        return type.getType().toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

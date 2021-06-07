@@ -28,7 +28,7 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
     @Override
     public List<CourseOffering> getAllCourseOffering(String period) {
         if(null != period){
-            if(!courseOfferingRepo.existsByPeriod(period)){
+            if(courseOfferingRepo.existsByPeriod(period)){
               return courseOfferingRepo.findAllByPeriod(period);
             }
         }
@@ -38,7 +38,7 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
     @Override
     public CourseOffering getCourseOffering(Course course, String period) {
         if(null != period && null != course){
-            if(!courseOfferingRepo.existsByCourseAndPeriod(course,period)){
+            if(courseOfferingRepo.existsByCourseAndPeriod(course,period)){
                 return courseOfferingRepo.findByCourseAndPeriod(course,period);
             }
         }
@@ -48,7 +48,7 @@ public class CourseOfferingServiceImpl implements CourseOfferingService {
     @Override
     public void deleteCourseOffering(Course course, String period) {
         if(null != period && null != course){
-            if(!courseOfferingRepo.existsByCourseAndPeriod(course,period)){
+            if(courseOfferingRepo.existsByCourseAndPeriod(course,period)){
                 courseOfferingRepo.delete(getCourseOffering(course,period));
             }
         }

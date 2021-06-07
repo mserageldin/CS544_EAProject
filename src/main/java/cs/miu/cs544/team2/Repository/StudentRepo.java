@@ -13,4 +13,6 @@ public interface StudentRepo extends JpaRepository<Student,Integer> {
     boolean existsByStudentId(String studentId);
     boolean existsByBarcode(String barCode);
     Student findByBarcode(String barCode);
+    boolean existsByEmailAddress(String email);
+    Student findByEmailAddress(String email);
 }

@@ -13,4 +13,5 @@ public interface BarCodeRecordService {
     List<BarCodeRecord> getStudentBarCodeRecord(String studentId, String courseCode, String period);
     List<BarCodeRecord> getAllStudentBarCodeRecord(String facultyName, String courseCode, String period);
     void updateBarCodeRecord(String studentId, String courseCode, String period, LocalDateTime localDateTime);
+    List<BarCodeRecord> getStudentBarCodeRecordById(String studentId);
 }

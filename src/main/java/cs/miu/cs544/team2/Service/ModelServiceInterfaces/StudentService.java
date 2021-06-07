@@ -9,4 +9,5 @@ public interface StudentService {
     void deleteStudent(String id);
     boolean updateStudent(Student student);
     Student getStudentByBarCode(String barCode);
+    Student getStudentByEmail(String email);
 }

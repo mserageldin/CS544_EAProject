@@ -24,7 +24,7 @@ public class FacultyServiceImpl implements FacultyService {
     @Override
     public Faculty getFaculty(String email) {
         if(null != email){
-            if(!facultyRepo.existsByEmailAddress(email)){
+            if(facultyRepo.existsByEmailAddress(email)){
                 return facultyRepo.findByEmailAddress(email);
             }
         }

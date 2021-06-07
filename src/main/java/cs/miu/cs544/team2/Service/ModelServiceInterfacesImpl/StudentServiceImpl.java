@@ -54,4 +54,12 @@ public class StudentServiceImpl implements StudentService {
         }
         return null;
     }
+
+    @Override
+    public Student getStudentByEmail(String email) {
+        if(studentRepo.existsByEmailAddress(email)){
+            return studentRepo.findByEmailAddress(email);
+        }
+        return null;
+    }
 }

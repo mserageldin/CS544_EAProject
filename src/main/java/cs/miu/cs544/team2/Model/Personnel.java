@@ -11,4 +11,9 @@ public class Personnel extends Person {
 
     @Column(name="title", columnDefinition = "nvarchar(50)")
     private String title;
+
+    public Personnel(String firstName, String lastName, String emailAddress, String title) {
+        super(firstName, lastName, emailAddress);
+        this.title = title;
+    }
 }

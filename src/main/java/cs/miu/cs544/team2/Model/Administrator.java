@@ -11,4 +11,9 @@ public class Administrator extends Person {
 
     @Column(name="title", columnDefinition = "nvarchar(50)")
     private String title;
+
+    public Administrator(String firstName, String lastName, String emailAddress, String title) {
+        super(firstName, lastName, emailAddress);
+        this.title = title;
+    }
 }

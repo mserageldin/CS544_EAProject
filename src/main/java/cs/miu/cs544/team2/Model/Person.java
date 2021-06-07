@@ -43,4 +43,20 @@ public class Person {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles = new LinkedList<>();
 
+    public Person(String firstName, String lastName, String emailAddress) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+    }
+
+    public Person() {
+
+    }
+
+    public void addRole(Role role){
+        roles.add(role);
+    }
+    public void deleteRole(Role role){
+        roles.remove(role);
+    }
 }

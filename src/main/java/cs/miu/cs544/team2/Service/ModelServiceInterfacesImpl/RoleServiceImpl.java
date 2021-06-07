@@ -7,6 +7,8 @@ import cs.miu.cs544.team2.Service.ModelServiceInterfaces.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleServiceImpl implements RoleService {
     @Autowired
@@ -20,4 +22,15 @@ public class RoleServiceImpl implements RoleService {
             }
         }
     }
+
+    @Override
+    public Role getRole(String role) {
+        List<Role> roleList = roleRepo.findAll();
+        for(Role role1: roleList){
+            if(role1.getRoleType().equalsIgnoreCase(role)) return role1;
+        }
+        return null;
+    }
+
+
 }

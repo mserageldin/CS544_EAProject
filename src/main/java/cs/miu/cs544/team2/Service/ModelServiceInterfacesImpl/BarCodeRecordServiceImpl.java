@@ -30,7 +30,7 @@ public class BarCodeRecordServiceImpl implements BarCodeRecordService {
     @Override
     public List<BarCodeRecord> getStudentBarCodeRecord(String studentId, String courseCode, String period) {
         if(null != studentId && null != courseCode && null != period){
-            if(!barCodeRecordRepo.existsByStudentIdAndCourseCodeAndPeriod(studentId,courseCode, period)){
+            if(barCodeRecordRepo.existsByStudentIdAndCourseCodeAndPeriod(studentId,courseCode, period)){
               return barCodeRecordRepo.findByStudentIdAndCourseCodeAndPeriod(studentId,courseCode,period);
             }
         }
@@ -40,7 +40,7 @@ public class BarCodeRecordServiceImpl implements BarCodeRecordService {
     @Override
     public List<BarCodeRecord> getAllStudentBarCodeRecord(String facultyName, String courseCode, String period) {
         if(null != facultyName && null != courseCode && null != period){
-            if(!barCodeRecordRepo.existsByFacultyNameAndCourseCodeAndPeriod(facultyName,courseCode,period)){
+            if(barCodeRecordRepo.existsByFacultyNameAndCourseCodeAndPeriod(facultyName,courseCode,period)){
                 return barCodeRecordRepo.findByFacultyNameAndCourseCodeAndPeriod(facultyName,courseCode,period);
             }
         }
@@ -51,5 +51,15 @@ public class BarCodeRecordServiceImpl implements BarCodeRecordService {
     @Override
     public void updateBarCodeRecord(String studentId, String courseCode, String period, LocalDateTime localDateTime) {
 
+    }
+
+    @Override
+    public List<BarCodeRecord> getStudentBarCodeRecordById(String studentId) {
+        if(null != studentId){
+            if(barCodeRecordRepo.existsByStudentId(studentId)) {
+                barCodeRecordRepo.findAllByStudentId(studentId);
+            }
+        }
+        return null;
     }
 }

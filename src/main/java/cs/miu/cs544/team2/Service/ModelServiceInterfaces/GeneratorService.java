@@ -5,6 +5,6 @@ import cs.miu.cs544.team2.Model.Generator;
 public interface GeneratorService {
     void save(Generator generator);
     Generator getGenerator();
-    void updateGenerator();
+    Generator updateGenerator();
     void deleteGenerator(Generator generator);
 }

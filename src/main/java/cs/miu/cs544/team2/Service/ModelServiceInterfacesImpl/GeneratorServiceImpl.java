@@ -15,9 +15,12 @@ public class GeneratorServiceImpl implements GeneratorService {
     @Override
     public void save(Generator generator) {
         if(null != generator){
-            generatorRepo.save(generator);
+            if(!generatorRepo.existsById(1)){
+                generatorRepo.save(generator);
+            }
         }
     }
+
 
     @Override
     public Generator getGenerator() {
@@ -25,7 +28,7 @@ public class GeneratorServiceImpl implements GeneratorService {
     }
 
     @Override
-    public void updateGenerator() {
+    public Generator updateGenerator() {
         Generator a = getGenerator();
         String studentIdLetters = a.getStudentId().substring(0,3);
         int studentIdNumbers = Integer.parseInt(a.getStudentId().substring(3));
@@ -40,6 +43,7 @@ public class GeneratorServiceImpl implements GeneratorService {
 
         deleteGenerator(a);
         save(new Generator(newStudentId,newBarCode));
+        return new Generator(newStudentId,newBarCode);
     }
 
     @Override

@@ -21,4 +21,8 @@ public class Faculty extends Person {
     @OrderColumn(name = "sequence")
     private List<CourseOffering> offering = new ArrayList<>();
 
+    public Faculty(String firstName, String lastName, String emailAddress, String title) {
+        super(firstName, lastName, emailAddress);
+        this.title = title;
+    }
 }

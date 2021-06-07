@@ -22,5 +22,15 @@ public class Course {
     @Column(length = 4000)
     private String description;
 
+    public Course(String code, String abbreviation, String name, String description) {
+        this.code = code;
+        this.abbreviation = abbreviation;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Course() {
+
+    }
 }
 

@@ -38,7 +38,7 @@ public class UCFacultyServiceImpl implements UCFacultyService {
                 }
             }
             if(null != record){
-                attendanceReportList.add(new AttendanceReport(record.getStudent().getFirstName(), record.getStudent().getLastName(),record.getStudent().getStudentId(),count));
+                attendanceReportList.add(new AttendanceReport(record.getStudent().getFirstName(), record.getStudent().getLastName(),record.getStudent().getStudentId(), courseCode, count));
             }
         }
         return attendanceReportList;

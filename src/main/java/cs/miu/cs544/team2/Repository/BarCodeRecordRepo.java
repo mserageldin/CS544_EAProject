@@ -18,5 +18,7 @@ public interface BarCodeRecordRepo extends JpaRepository<BarCodeRecord,Integer> 
     boolean existsByStudentIdAndCourseCodeAndPeriodAndTimeStamp(String studentId, String courseCode, String period, LocalDateTime localDateTime);
     boolean existsByStudentIdAndCourseCodeAndPeriod(String studentId, String courseCode, String period);
     boolean existsByFacultyNameAndCourseCodeAndPeriod(String facultyName, String courseCode, String period);
+    boolean existsByStudentId(String studentId);
+    List<BarCodeRecord> findAllByStudentId(String studentId);
 
 }

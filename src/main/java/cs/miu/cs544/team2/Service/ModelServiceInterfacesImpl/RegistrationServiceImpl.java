@@ -28,7 +28,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public Registration getRegistration(Student student) {
         if(null != student){
-            if(!registrationRepo.existsByStudent(student)){
+            if(registrationRepo.existsByStudent(student)){
                return registrationRepo.findByStudent(student);
             }
         }
@@ -38,7 +38,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public void deleteRegistration(Student student) {
         if(null != student){
-            if(!registrationRepo.existsByStudent(student)){
+            if(registrationRepo.existsByStudent(student)){
                 registrationRepo.delete(registrationRepo.findByStudent(student));
             }
         }

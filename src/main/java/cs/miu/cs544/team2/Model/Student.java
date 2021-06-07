@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -42,6 +43,23 @@ public class Student extends Person {
     @OneToMany
     @JoinColumn(name = "studentid")
     @Fetch(FetchMode.SUBSELECT)
-    private List<Registration> registrations;
+    private List<Registration> registrations= new ArrayList<>();
 
+    public Student(String firstName, String lastName, String emailAddress, String studentId, String visaStatus, String status, String track, LocalDate entryDate, String barcode) {
+        super(firstName, lastName, emailAddress);
+        this.studentId = studentId;
+        this.visaStatus = visaStatus;
+        this.status = status;
+        this.track = track;
+        this.entryDate = entryDate;
+        this.barcode = barcode;
+    }
+
+    public Student() {
+        super();
+    }
+
+    public void addRegistration(Registration registration){
+        registrations.add(registration);
+    }
 }

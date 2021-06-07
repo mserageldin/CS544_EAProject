@@ -41,7 +41,7 @@ public class Location {
     @Fetch(FetchMode.SUBSELECT)
     private List<CourseOffering> offerings = new ArrayList<>();
 
-    public Location(String name, String building, String roomNumber, Integer capacity) {
+    public Location(String name, String building, String roomNumber, int capacity) {
         this.name = name;
         this.building = building;
         this.roomNumber = roomNumber;

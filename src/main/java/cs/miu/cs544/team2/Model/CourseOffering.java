@@ -50,6 +50,12 @@ public class CourseOffering {
     @JoinColumn(name = "locationId")
     private Location location;
 
-
-
+    public CourseOffering(Course course, String period, LocalDate beginDate, LocalDate endDate, int capacity, Location location) {
+        this.course = course;
+        this.period = period;
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+        this.capacity = capacity;
+        this.location = location;
+    }
 }

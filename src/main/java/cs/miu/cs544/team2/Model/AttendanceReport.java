@@ -5,12 +5,14 @@ public class AttendanceReport {
     private String firstName;
     private String lastName;
     private String studentId;
+    private String courseCode;
     private int attendanceRecord;
 
-    public AttendanceReport(String firstName, String lastName, String studentId, int attendanceRecord) {
+    public AttendanceReport(String firstName, String lastName, String studentId, String courseCode, int attendanceRecord) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentId = studentId;
+        this.courseCode = courseCode;
         this.attendanceRecord = attendanceRecord;
     }
 
