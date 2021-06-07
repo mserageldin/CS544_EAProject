@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional(readOnly = false)
+@Transactional
 public interface RoleRepo extends JpaRepository<Role,Integer> {
-    boolean existsRoleByType(RoleType roleType);
+    boolean existsRoleByType(RoleType type);
 }

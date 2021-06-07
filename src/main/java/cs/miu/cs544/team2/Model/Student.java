@@ -1,6 +1,10 @@
 package cs.miu.cs544.team2.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -13,6 +17,8 @@ import java.util.List;
 
 @Data
 @Entity
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class Student extends Person {
 
     @Column(name="student_id", columnDefinition = "char(11)")

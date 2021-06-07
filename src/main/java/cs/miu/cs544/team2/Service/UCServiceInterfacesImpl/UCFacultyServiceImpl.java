@@ -7,12 +7,14 @@ import cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl.BarCodeRecordServic
 import cs.miu.cs544.team2.Service.ModelServiceInterfacesImpl.FacultyServiceImpl;
 import cs.miu.cs544.team2.Service.UCServiceInterfaces.UCFacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Service
 public class UCFacultyServiceImpl implements UCFacultyService {
 
     @Autowired

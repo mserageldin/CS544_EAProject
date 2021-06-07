@@ -1,19 +1,30 @@
 package cs.miu.cs544.team2;
 
 
+import cs.miu.cs544.team2.Model.Person;
+import cs.miu.cs544.team2.Model.Registration;
 import cs.miu.cs544.team2.Model.Generator;
 import cs.miu.cs544.team2.Model.Role;
 import cs.miu.cs544.team2.Model.RoleType;
+import cs.miu.cs544.team2.Model.Student;
 import cs.miu.cs544.team2.Model.Timeslot;
 import cs.miu.cs544.team2.Service.ModelServiceInterfaces.GeneratorService;
+import cs.miu.cs544.team2.Service.ModelServiceInterfaces.PersonService;
 import cs.miu.cs544.team2.Service.ModelServiceInterfaces.RoleService;
 import cs.miu.cs544.team2.Service.ModelServiceInterfaces.TimeslotService;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
+import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
 import javax.transaction.Transactional;
+
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @Component
 public class StartUpRunner implements CommandLineRunner {
@@ -22,8 +33,9 @@ public class StartUpRunner implements CommandLineRunner {
     @Autowired
     private TimeslotService timeslot;
     @Autowired
+    private PersonService personService;
+    @Autowired
     private GeneratorService generatorService;
-
 
     @Transactional
     public void run(String... args) throws Exception {
@@ -47,6 +59,17 @@ public class StartUpRunner implements CommandLineRunner {
         timeslot.saveTimeSlot(timeslot1);
         timeslot.saveTimeSlot(timeslot2);
         timeslot.saveTimeSlot(timeslot3);
+        List<Role> coll=new ArrayList<Role>();
+        coll.add(new Role(RoleType.STUDENT));
+        Person stud=new Person( 1, "user", "$2a$10$RfGoQbp9Q5OI4LNBoXO.suQCuGxMT/dnIqgC6g35PTxf60x1TIjF6", "Moh","Serag", "email1",coll); 
+        List<Role> coll1=new ArrayList<Role>();
+        coll1.add(new Role(RoleType.FACULTY));
+        Person admin=new Person( 2, "admin", "$2a$10$.J5fdM7YNK8UXRQIKt993.PEjR1AYjkQxKGp27vBKGQTrPi4e5I3m", "admin","admin", "email1",coll1);
+        personService.savePerson(stud);
+        personService.savePerson(admin);
+//        insert into USERS (id, username, password, address, email, fullname, instructions, mobile) values
+//        (1, 'user', '$2a$10$RfGoQbp9Q5OI4LNBoXO.suQCuGxMT/dnIqgC6g35PTxf60x1TIjF6', 'add1', 'email1', 'fullname1', 'instruction1', '323233'),
+//        (2, 'admin', '$2a$10$.J5fdM7YNK8UXRQIKt993.PEjR1AYjkQxKGp27vBKGQTrPi4e5I3m', 'admin', 'admin', 'admin', 'admin', '000000');
 
         generatorService.save(generator);
 
