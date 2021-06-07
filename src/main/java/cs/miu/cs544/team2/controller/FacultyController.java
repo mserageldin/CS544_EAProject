@@ -1,4 +1,4 @@
-package cs.miu.cs544.team2.controller;
+package cs.miu.cs544.team2.Controller;
 
 import cs.miu.cs544.team2.Model.AttendanceReport;
 import cs.miu.cs544.team2.Model.CourseOffering;
