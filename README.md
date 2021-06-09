@@ -10,34 +10,34 @@ This system has a database of users and roles and based on roles, users will be 
 * This system supports four roles: Student,Faculty,Personnal,Administrative. 
 * A “Person” is a user of the system, we need to keep track of person ID, first and last name, email 
 address and obviously username, password and set of roles. Person can have multiple roles. 
-* A Faculty can :
-  -Show Students Attendance History
-  -Show My Last 6 Courses
-* A student can Register To:
-   -Course-Show Course Offering
-   -Show Registered Courses
-   -Take Attendance-Show Attendance Record
-* A Administrator can :
-  -Add Course
-  -Drop Course
-  -Add Course Offering
-  -Drop Course Offering
-  -Register Student
-  -Drop Student
-  -Register Faculty
-  -Drop Faculty
-  -Register Personnel
-  -Drop Personnel
-  -Register Administrator
-  -Drop Administrator
-  -Add Role
-  -Drop Role
-  -Add Location
-  -Drop Location
-  -Add Timeslot
-* A Personnel can :
-  -Show All Time Attendance Record Of A Student
-  -Update Student Attendance Record
+* A Faculty can :<br />
+  -Show Students Attendance History<br />
+  -Show My Last 6 Courses<br />
+* A student can Register To:<br />
+   -Course-Show Course Offering<br />
+   -Show Registered Courses<br />
+   -Take Attendance-Show Attendance Record<br />
+* A Administrator can :<br />
+  -Add Course<br />
+  -Drop Course<br />
+  -Add Course Offering<br />
+  -Drop Course Offering<br />
+  -Register Student<br />
+  -Drop Student<br />
+  -Register Faculty<br />
+  -Drop Faculty<br />
+  -Register Personnel<br />
+  -Drop Personnel<br />
+  -Register Administrator<br />
+  -Drop Administrator<br />
+  -Add Role<br />
+  -Drop Role<br />
+  -Add Location<br />
+  -Drop Location<br />
+  -Add Timeslot<br />
+* A Personnel can :<br />
+  -Show All Time Attendance Record Of A Student<br />
+  -Update Student Attendance Record<br />
   
 
 
